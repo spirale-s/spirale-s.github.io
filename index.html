@@ -10,20 +10,24 @@
 				background-color: #f0f0f0;
 				margin: 0px;
 				overflow: hidden;
+                
 			}
 			#sList{
-				position: absolute;
+			position: absolute;
+            top: 50px;
 			}
+
 
 		</style>
 	</head>
 <body>
 	<script>
 		function sTop() {
-   		document.getElementById("sList").style.top = "100px";
+   		document.getElementById("sList").style.top = "150px";
+        document.getElementById("sList").innerHTML = "you clicked me!";
 	}
 	</script>
-	<button type="button" id="sList" onclick="sTop()">Hello World!</button>
+	<p id="sList" onclick="sTop()">Hello World!</p>
 	<p ><a href="examples/t01.html">Test01</a></p>
 	<p ><a href="examples/t02.html">Test02</a></p>
 </body>
