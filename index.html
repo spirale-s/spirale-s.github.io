@@ -7,18 +7,27 @@
 		<style>
 
 			@font-face {
+    			font-family: menlo;
+    			src: url(../font/menlo.woff) format('woff');
+			}
+			@font-face {
     			font-family: kenpixel;
-    			src: url(../font/ttf/kenpixel.ttf);
+    			src: url(../font/kenpixel.ttf) format('truetype'),
+    				 url(../font/kenpixel.woff) format('woff');
 			}
 
-			body {
+			.menlo {
 				font-family: menlo;
+			}
+
+			p {
+				font-family: monospace;
 				background-color: #f0f0f0;
 				margin: 0px;
 				overflow: hidden;
                 
 			}
-			#sList{
+			.kenpixel{
 			position: absolute;
             top: 250px;
             font-family: kenpixel;
@@ -36,11 +45,11 @@
         document.body.style.backgroundColor = "yellow";
 	}
 	</script>
-	<p id="sList" onclick="sTop()">Hello World!</p>
+	<p class="kenpixel" onclick="sTop()">Hello World!</p>
 	<p ><a href="examples/t01.html">Test01</a></p>
 	<p ><a href="examples/t02.html">Test02</a></p>
 	<p ><a href="examples/t03.html">Test03</a></p>
-	<p >APRIL is the cruellest month, breeding
+	<p class="menlo">APRIL is the cruellest month, breeding
 Lilacs out of the dead land, mixing
 Memory and desire, stirring
 Dull roots with spring rain.
