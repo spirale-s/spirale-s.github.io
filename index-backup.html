@@ -33,9 +33,8 @@
 			}
 
 			#sList{
-
-				padding: 220px;
-            	text-align: center;
+				position: absolute;
+            	top: 450px;
 			}
 
 			body {
@@ -57,12 +56,24 @@
 <body>
 	<script>
 		function sTop() {
+   		document.getElementById("sList").style.top = "650px";
         document.getElementById("sList").innerHTML = "you clicked me!";
         document.body.style.backgroundColor = "yellow";
 	}
 	</script>
 	<p id="sList" class="kenpixel" onclick="sTop()">Hello World!</p>
-	
+	<p ><a href="examples/t01.html">Test01</a></p>
+	<p ><a href="examples/t02.html">Test02</a></p>
+	<p ><a href="examples/t03.html">Test03</a></p>
+	<p class="AndaleMono">APRIL is the cruellest month, breeding
+Lilacs out of the dead land, mixing
+Memory and desire, stirring
+Dull roots with spring rain.
+Winter kept us warm, covering         
+Earth in forgetful snow, feeding
+A little life with dried tubers.
+
+When your arm is numb, you don't feel it. But when the blood flows again, and the pins and needles come, suddenly you know about it. It's not numbness that hurts; it's the return of feeling.</p>
 
 
 </body>

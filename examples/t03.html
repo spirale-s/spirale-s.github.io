@@ -39,8 +39,8 @@
 				camera = new THREE.PerspectiveCamera( 60, window.innerWidth / window.innerHeight, 0.01, 1e10 );
 				camera.position.z = 6;
 				controls = new THREE.OrbitControls( camera );
-				controls.rotateSpeed = 5.0;
-				controls.zoomSpeed = 5;
+				controls.rotateSpeed = 1.0;
+				controls.zoomSpeed = 1;
 				scene = new THREE.Scene();
 				scene.add( camera );
 				// light
