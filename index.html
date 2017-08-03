@@ -45,9 +45,7 @@
 				font-family: kenpixel;
                 
 			}
-			p {
-				font-size: 10px;
-			}
+		
 
 			a:link {color: #000000; text-decoration:none;}
 			a:visited {color: #000000; text-decoration:none;font-family: kenpixel;}
@@ -57,14 +55,17 @@
 	</head>
 <body>
 	<script>
-		function sTop() {
-        	document.getElementById("sList").innerHTML = "you clicked me!";
+		function sOver(x) {
+			x.style.fontSize = 80%;
+		}
+		function sTop(x) {
+        	x.innerHTML = "you clicked me!";
         	document.body.style.backgroundColor = "yellow";
 	}
 
 	</script>
 	<p ><a href="examples/t03.html">Test03</a><a href="examples/t04.html">Test04</a></p>
-	<h2 id="sList"><a onclick="sTop()">Hello World!</a></h2>
+	<p id="sList" onclick="sTop()">Hello World!</p>
 
 
 
