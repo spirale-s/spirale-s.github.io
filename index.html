@@ -5,7 +5,6 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 		<style>
-
 			@font-face {
     			font-family: menlo;
     			src: url(../font/menlo.ttf) format('truetype'),
@@ -21,7 +20,6 @@
     				 url(../font/kenpixel.woff) format('woff');
     				 
 			}
-
 			.menlo {
 				font-family: menlo;
 			}
@@ -29,15 +27,12 @@
 				font-family: AndaleMono;
 			}
 			.kenpixel{
-            font-family: kenpixel;
+            	font-family: kenpixel;
 			}
-
 			#sList{
-
 				padding-top: 20%;
             	text-align: center;
 			}
-
 			body {
 				background-color: #f0f0f0;
 				margin: 0px;
@@ -45,27 +40,23 @@
 				font-family: kenpixel;
                 
 			}
-		
-
+			p {
+				font-size: 10px;
+			}
 			a:link {color: #000000; text-decoration:none;}
 			a:visited {color: #000000; text-decoration:none;font-family: kenpixel;}
 			a:hover {font-family: AndaleMono;}
-
 		</style>
 	</head>
 <body>
 	<script>
-		function sOver(x) {
-			x.style.fontSize = 80%;
-		}
-		function sTop(x) {
-        	x.innerHTML = "you clicked me!";
+		function sTop() {
+        	document.getElementById("sList").innerHTML = "you clicked me!";
         	document.body.style.backgroundColor = "yellow";
 	}
-
 	</script>
-	<p ><a href="examples/t03.html">Test03</a><a href="examples/t04.html">Test04</a></p>
-	<p id="sList" onclick="sTop()">Hello World!</p>
+	<p id="C"><a href="examples/t03.html">Test03</a><a href="examples/t04.html">Test04</a></p>
+	<h2 id="sList"><a onclick="sTop()" >Hello World!</a></h2>
 
 
 
