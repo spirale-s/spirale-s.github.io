@@ -18,14 +18,6 @@
     				 url(../font/kenpixel.woff) format('woff');		 
     				 
 			}
-		
-			#sList{
-				padding-top: 20%;
-            	text-align: center;
-			}
-			#weekend{
-				font-family: andaleMono;
-			}
 			
 			body {
 				background-color: #f0f0f0;
@@ -51,6 +43,8 @@
 				cursor:pointer;
 				overflow: hidden;
 				outline:none;
+				margin: 0px;
+				padding: 0px;
 
 			}
 			.sCenter{
@@ -67,13 +61,17 @@
 				opacity:0.5;
 
 			}
+				
+			#weekend{
+				font-family: andaleMono;
+			}
 		</style>
 	</head>
 
 	<body>
 		<p><a href="examples/t03.html">Test03</a><br><a href="examples/t04.html">Test04</a></p>
 
-		<p id="weekend" onclick="window.location.reload()"></p>
+		<button id="weekend" onclick="window.location.reload()"></button>
 		<script>
 			var text;
 			switch (new Date().getDay()) {
