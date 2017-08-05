@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title><!--...--></title>
+		<!--<link rel="SHORTCUT ICON" href="logo/code.ico">-->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<style>
+			@font-face {
+    			font-family: menlo;
+    			src: url(../font/menlo.ttf) format('truetype'),
+    				 url(../font/menlo.woff) format('woff');
+			}
+			@font-face {
+    			font-family: andaleMono;
+    			src: url(../font/andaleMono.ttf) format('truetype');
+			}
+			@font-face {
+    			font-family: kenpixel;
+    			src: url(../font/kenpixel.ttf) format('truetype'),
+    				 url(../font/kenpixel.woff) format('woff');		 
+    				 
+			}
+		
+
+
+			.menlo {
+				font-family: menlo;
+			}
+			.andaleMono {
+				font-family: andaleMono;
+			}
+			.kenpixel{
+            	font-family: kenpixel;
+			}
+			#sList{
+				padding-top: 20%;
+            	text-align: center;
+			}
+			#demo{
+				font-family: andaleMono;
+			}
+			
+			body {
+				background-color: #f0f0f0;
+				margin: 0px;
+				overflow: hidden;
+				font-family: "kenpixel";
+                
+			}
+			p {
+				font-size: 60%;
+			}
+			a:link {color: #000000; text-decoration:none;}
+			a:visited {color: #000000; text-decoration:none;}
+			a:hover {font-family: andaleMono;}
+		</style>
+	</head>
+<body>
+	<script>
+		function sTop(obj) {
+        	obj.innerHTML = "you clicked me!";
+        	//document.getElementById("sList").style.fontSize = "100%";
+        	document.body.style.backgroundColor = "yellow";
+        	obj.addEventListener("click", function(){window.location.reload();};
+		}
+		function mOver(obj) {
+    		obj.style.fontFamily = "andaleMono";
+		}
+
+		function mOut(obj) {
+    		obj.style.fontFamily = "kenpixel";
+		}
+	</script>
+
+	<p id="C"><a href="examples/t03.html">Test03</a><br><a href="examples/t04.html">Test04</a></p>
+	<p id="demo" onclick="window.location.reload()"></p>
+
+	<script>
+		var text;
+		switch (new Date().getDay()) {
+    		case 6:
+        		text = "Today is Saturday";
+        	break;
+    		case 0:
+        		text = "Today is Sunday";
+        	break;
+    		default:
+        		text = "Looking forward to the Weekend";
+		}
+		document.getElementById("demo").innerHTML = text;
+	</script>
+
+	<h2 id="sList">Hello World!</h2>
+	<script>
+		var x = document.getElementById("sList");
+		x.addEventListener("mouseover", myFunction);
+		x.addEventListener("click", mySecondFunction);
+		x.addEventListener("mouseout", myThirdFunction);
+
+		function myFunction() {
+    		document.getElementById("sList").style.fontFamily = "andaleMono";
+		}
+
+		function mySecondFunction() {
+    		document.getElementById("sList").innerHTML = "you clicked me!";
+        	//document.getElementById("sList").style.fontSize = "100%";
+        	document.body.style.backgroundColor = "yellow";
+		}
+
+		function myThirdFunction() {
+    		document.getElementById("sList").style.fontFamily = "kenpixel";
+		}
+
+
+	</script>
+
+
+
+	
+	
+
+</body>
+</html>
