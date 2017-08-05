@@ -8,23 +8,21 @@
 		<style>
 
 			@font-face {
-    			font-family: andaleMono;
-    			src: url(../font/andaleMono.woff) format('woff'),
-    				 url(../font/andaleMono.ttf) format('truetype');
+				font-family: andaleMono;
+				src: url(../font/andaleMono.woff) format('woff'),
+					 url(../font/andaleMono.ttf) format('truetype');
 			}
 			@font-face {
-    			font-family: kenpixel;
-    			src: url(../font/kenpixel.ttf) format('truetype'),
-    				 url(../font/kenpixel.woff) format('woff');		 
-    				 
-			}
+				font-family: kenpixel;
+				src: url(../font/kenpixel.ttf) format('truetype'),
+					 url(../font/kenpixel.woff) format('woff');		 
+			}		
 			
 			body {
 				background-color: #f0f0f0;
 				margin: 0px;
 				overflow: hidden;
 				font-family: monospace;
-                
 			}
 			p {
 				font-size: 60%;
@@ -49,11 +47,11 @@
 			}
 			.sCenter{
 				text-align: center;
-				padding-top: 10%;
+				padding-top: 20%;
 				margin: 0px;
 			}
 			.sButton{
-				font-size: 18px;
+				font-size: 200%;
 				font-family: "kenpixel";
 
 			}
@@ -75,22 +73,22 @@
 		<script>
 			var text;
 			switch (new Date().getDay()) {
-	    		case 6:
-	        		text = "Today is Saturday";
-	        	break;
-	    		case 0:
-	        		text = "Today is Sunday";
-	        	break;
-	    		default:
-	        		text = "Looking forward to the Weekend";
+				case 6:
+					text = "Today is Saturday";
+				break;
+				case 0:
+					text = "Today is Sunday";
+				break;
+				default:
+					text = "Looking forward to the Weekend";
 			}
 			document.getElementById("weekend").innerHTML = text;
 		</script>
 
 		<script>
 			function oTop() {
-        		document.getElementById("sHeadline").innerHTML = "you clicked me!";
-        		document.body.style.backgroundColor = "yellow";
+				document.getElementById("sHeadline").innerHTML = "you clicked me!";
+				document.body.style.backgroundColor = "yellow";
 			}
 		</script>
 		<div class="sCenter">
