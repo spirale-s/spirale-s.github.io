@@ -25,7 +25,10 @@
 				font-family: monospace;
 				font-size: 11px;
 			}
+			span {
+				cursor:pointer;
 
+			}
 			a {
 				font-family: "kenpixel";
 				
@@ -33,17 +36,7 @@
 			a:link {color: #000000; text-decoration:none;}
 			a:visited {color: #000000; text-decoration:none;}
 			a:hover {font-family: andaleMono;}
-			button {
-				background-color: Transparent;
-				background-repeat:no-repeat;
-				border: none;
-				cursor:pointer;
-				overflow: hidden;
-				outline:none;
-				margin: 0px;
-				padding: 0px;
 
-			}
 			.sCenter{
 				text-align: center;
 				padding-top: 220px;
@@ -68,7 +61,7 @@
 	<body>
 		<p><a href="examples/t03.html">Test03</a><br><a href="examples/t04.html">Test04</a></p>
 
-		<button id="weekend" onclick="window.location.reload()"></button>
+		<p><span id="weekend" onclick="window.location.reload()"></span></p>
 		<script>
 			var text;
 			switch (new Date().getDay()) {
@@ -91,7 +84,7 @@
 			}
 		</script>
 		<div class="sCenter">
-			<button id="sHeadline" class="sButton" onclick="oTop()">Hello World!</button>
+			<span id="sHeadline" class="sButton" onclick="oTop()">Hello World!</span>
 		</div>
 
 	</body>
