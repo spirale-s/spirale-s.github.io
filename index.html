@@ -5,6 +5,8 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 		<link rel="icon" sizes="192x192" href="/logo/s.png">
+		<script type="text/javascript" src="three.min.js"></script>
+		<script type="text/javascript" src="sea.js"></script>
 		<style>
 
 			@font-face {
@@ -19,7 +21,6 @@
 			}		
 			
 			body {
-				background-color: #f0f0f0;
 				margin: 0px;
 				overflow: hidden;
 				font-family: monospace;
@@ -38,6 +39,7 @@
 			a:hover {font-family: andaleMono;}
 
 			.sCenter{
+
 				text-align: center;
 				padding-top: 220px;
 				margin: 0px;
@@ -51,7 +53,24 @@
 				opacity:0.5;
 
 			}
-				
+
+			.text-holder {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+
+			}
+			.world {
+				position: absolute;
+				overflow: hidden;
+				width: 100%;
+				height: 100%;
+				z-index: -1;
+				background-color: #f0f0f0;				
+
+			}
+
+
 			#weekend{
 				font-family: andaleMono;
 			}
@@ -59,33 +78,39 @@
 	</head>
 
 	<body>
-		<p><a href="examples/t03.html">Test03</a><br><a href="examples/t04.html">Test04</a></p>
+		<div class="text-holder">
+			<p><a href="examples/t03.html">Test03</a><br><a href="examples/t04.html">Test04</a></p>
 
-		<p><span id="weekend" onclick="window.location.reload()"></span></p>
-		<script>
-			var text;
-			switch (new Date().getDay()) {
-				case 6:
-					text = "Today is Saturday";
-				break;
-				case 0:
-					text = "Today is Sunday";
-				break;
-				default:
-					text = "Looking forward to the Weekend";
-			}
-			document.getElementById("weekend").innerHTML = text;
-		</script>
+			<p><span id="weekend" onclick="window.location.reload()"></span></p>
+			<script>
+				var text;
+				switch (new Date().getDay()) {
+					case 6:
+						text = "Today is Saturday";
+					break;
+					case 0:
+						text = "Today is Sunday";
+					break;
+					default:
+						text = "Looking forward to the Weekend";
+				}
+				document.getElementById("weekend").innerHTML = text;
+			</script>
 
-		<script>
-			function oTop() {
-				document.getElementById("sHeadline").innerHTML = "you clicked me!";
-				document.body.style.backgroundColor = "yellow";
-			}
-		</script>
-		<div class="sCenter">
-			<span id="sHeadline" class="sButton" onclick="oTop()">Hello World!</span>
+			<script>
+				function oTop() {
+					document.getElementById("sHeadline").innerHTML = "you clicked me!";
+					document.getElementById("world").style.backgroundColor = "yellow";
+				}
+			</script>
+			<div class="sCenter">
+				<span id="sHeadline" class="sButton" onclick="oTop()">Hello World!</span>
+			</div>
 		</div>
+
+		<div class="world" id="world"></div>
+
+
 
 	</body>
 

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+		<script src="../build/three.js"></script>
+
+		<script src="js/Detector.js"></script>
+
+
+<style type="text/css">
+	body{
+		background: #f0f0f0;
+	}
+			#canvas1, #canvas2, #canvas3 {
+				position: relative;
+				display: block;
+				border: 1px solid red;
+			}
+			#canvas1 {
+				width: 300px;
+				height: 200px;
+			}
+			#canvas2 {
+				width: 400px;
+				height: 100px;
+				left: 150px;
+			}
+			#canvas3 {
+				width: 200px;
+				height: 300px;
+				left: 75px;
+			}
+</style>
+
+
+
+</head>
+<body>
+<script>
+$(document).ready(function(){
+    $("p").click(function(){
+        $(this).hide();
+    });
+});
+$(document).ready(function(){
+    $("span").click(function(){
+        $("#p1").css("color", "red");
+    });
+});
+</script>
+<p>If you click on me, I will disappear.</p>
+<p>Click me away!</p>
+<button>click</button>
+<span id="p1">Click me too!</span>
+
+
+		<div id="container">
+			<canvas id="canvas1"></canvas>
+			<canvas id="canvas2"></canvas>
+			<canvas id="canvas3"></canvas>
+		</div>
+<script type="text/javascript">
+		var views = [];
+			var scene, renderer;
+			var mouseX = 0, mouseY = 0;
+			var windowHalfX = window.innerWidth / 2;
+			var windowHalfY = window.innerHeight / 2;
+			init();
+			animate();
+</script>
+
+
+</body>
+</html>
+
