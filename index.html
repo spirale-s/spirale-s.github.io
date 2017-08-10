@@ -21,68 +21,52 @@
 			}		
 			
 			body {
+
 				margin: 0px;
-				overflow: hidden;
 				font-family: monospace;
 				font-size: 11px;
+				background-color: #f0f0f0;	
 			}
 			span {
 				cursor:pointer;
 
 			}
-			a {
-				font-family: "kenpixel";
-				
-			}
-			a:link {color: #000000; text-decoration:none;}
-			a:visited {color: #000000; text-decoration:none;}
-			a:hover {font-family: andaleMono;}
-
-			.sCenter{
-
-				text-align: center;
-				padding-top: 200px;
-				margin: 0px;
-			}
-			.sButton{
-				font-size: 33px;
-				font-family: "kenpixel";
-
-			}
-			.sButton:hover{
+			span:hover{
 				opacity:0.5;
 
 			}
 
-			.text-holder {
-				position: absolute;
-				overflow: hidden;
-				width: 100%;
-				height: 100%;
 
-			}
-			.world {
-				position: absolute;
-				overflow: hidden;
-				width: 100%;
-				height: 100%;
-				z-index: -1;
-				background-color: #f0f0f0;				
+			.sCenter {
 
+				position: absolute;
+				bottom: 33%;
+				margin: 0px;
+				width: 100%;
+				text-align: center;
 			}
 
-
-			#weekend{
+			#weekend {
 				font-family: andaleMono;
+				display: none;
 			}
+			#sHeadline {
+				font-family: "kenpixel";
+			}
+
+
+
 		</style>
 	</head>
 
 	<body>
-		<div class="text-holder">
-			<p><a href="examples/t03.html">Test03</a><br><a href="examples/t04.html">Test04</a></p>
 
-			<p><span id="weekend" onclick="window.location.reload()"></span></p>
+		<p class="sCenter">
+			<span id="weekend" onclick="window.location.reload()"></span>&nbsp;<span id="sHeadline" onclick="oTop()">.zip</span>
+		</p>
+
+
+
 			<script>
 				var text;
 				switch (new Date().getDay()) {
@@ -100,16 +84,21 @@
 
 			<script>
 				function oTop() {
-					document.getElementById("sHeadline").innerHTML = "you clicked me!";
-					document.getElementById("world").style.backgroundColor = "yellow";
+					document.getElementById("weekend").style.display = "block";
+					document.getElementById("sHeadline").style.display = "none";
+					document.body.style.backgroundColor = "yellow";
 				}
-			</script>
-			<div class="sCenter">
-				<span id="sHeadline" class="sButton" onclick="oTop()">Hello World!</span>
-			</div>
-		</div>
+			function show(){
 
-		<div class="world" id="world"></div>
+			}	
+			</script>
+
+
+
+
+
+
+		<!--<div class="world" id="world"></div>-->
 
 
 
