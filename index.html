@@ -4,11 +4,7 @@
 		<title><!--...--></title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-		<link rel="icon" sizes="192x192" href="/logo/s.png">
-		<script type="text/javascript" src="three.min.js"></script>
-		<script type="text/javascript" src="sea.js"></script>
 		<style>
-
 			@font-face {
 				font-family: andaleMono;
 				src: url(../font/andaleMono.woff) format('woff'),
@@ -21,87 +17,59 @@
 			}		
 			
 			body {
-
-				margin: 0px;
 				font-family: monospace;
-				font-size: 11px;
-				background-color: #f0f0f0;	
+				background-color: #f0f0f0;
 			}
 			span {
 				cursor:pointer;
-
 			}
 			span:hover{
 				opacity:0.5;
-
 			}
-
 
 			.sCenter {
-
 				position: absolute;
-				bottom: 33%;
-				margin: 0px;
 				width: 100%;
+				top: 66%;
+				margin: 0px;
 				text-align: center;
+				font-size: 11px;	
 			}
 
-			#weekend {
-				font-family: andaleMono;
+			#sWeekend {
+				font-family: "andaleMono";
 				display: none;
 			}
-			#sHeadline {
-				font-family: "kenpixel";
+			#sZip {
+				font-family: "andaleMono";
 			}
-
-
-
 		</style>
 	</head>
 
 	<body>
-
 		<p class="sCenter">
-			<span id="weekend" onclick="window.location.reload()"></span>&nbsp;<span id="sHeadline" onclick="oTop()">.zip</span>
+			<span id="sWeekend" onclick="window.location.reload()"></span>&nbsp;<span id="sZip" onclick="sTop()">.zip</span>
 		</p>
 
+		<script>
+			var text;
+			switch (new Date().getDay()) {
+				case 6:
+					text = "Today is Saturday";
+				break;
+				case 0:
+					text = "Today is Sunday";
+				break;
+				default:
+					text = "Looking forward to the Weekend";
+			}
+			document.getElementById("sWeekend").innerHTML = text;
 
-
-			<script>
-				var text;
-				switch (new Date().getDay()) {
-					case 6:
-						text = "Today is Saturday";
-					break;
-					case 0:
-						text = "Today is Sunday";
-					break;
-					default:
-						text = "Looking forward to the Weekend";
-				}
-				document.getElementById("weekend").innerHTML = text;
-			</script>
-
-			<script>
-				function oTop() {
-					document.getElementById("weekend").style.display = "block";
-					document.getElementById("sHeadline").style.display = "none";
-					document.body.style.backgroundColor = "yellow";
-				}
-			function show(){
-
-			}	
-			</script>
-
-
-
-
-
-
-		<!--<div class="world" id="world"></div>-->
-
-
-
+			function sTop() {
+				document.getElementById("sWeekend").style.display = "block";
+				document.getElementById("sZip").style.display = "none";
+				document.body.style.backgroundColor = "yellow";
+			}			
+		</script>
 	</body>
-
 </html>
