@@ -43,6 +43,7 @@
 			#sZip {
 				font-family: "andaleMono";
 			}
+
 		</style>
 	</head>
 
@@ -50,6 +51,7 @@
 		<p class="sCenter">
 			<span id="sWeekend" onclick="window.location.reload()"></span>&nbsp;<span id="sZip" onclick="sTop()">.zip</span>
 		</p>
+		<div id="sAudio"></div>
 
 		<script>
 			var text;
@@ -69,7 +71,11 @@
 				document.getElementById("sWeekend").style.display = "block";
 				document.getElementById("sZip").style.display = "none";
 				document.body.style.backgroundColor = "yellow";
-			}			
+				document.getElementById("sAudio").innerHTML='<audio autoplay loop><source src="audio/Trentemøller-Take Me into Your Skin.mp3" type="audio/mpeg"></audio>';
+				
+			}	
+	
 		</script>
+
 	</body>
 </html>
