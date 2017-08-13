@@ -4,6 +4,7 @@
 		<title><!--...--></title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<style>
 			@font-face {
 				font-family: andaleMono;
@@ -17,8 +18,9 @@
 			}		
 			
 			body {
-				font-family: monospace;
+				font-family: "andaleMono";
 				background-color: #f0f0f0;
+				overflow: hidden;
 			}
 			span {
 				cursor:pointer;
@@ -35,13 +37,18 @@
 				text-align: center;
 				font-size: 11px;	
 			}
-
-			#sWeekend {
-				font-family: "andaleMono";
+			.sBlock {
 				display: none;
+				position: absolute;
+				width: 100px;
+				top: 66%;
+				margin: 0 auto;
+				text-align: center;
+				font-size: 11px;
 			}
-			#sZip {
-				font-family: "andaleMono";
+
+			#sWeekend {				
+				display: none;
 			}
 
 		</style>
@@ -51,7 +58,14 @@
 		<p class="sCenter">
 			<span id="sWeekend" onclick="window.location.reload()"></span>&nbsp;<span id="sZip" onclick="sTop()">.zip</span>
 		</p>
-		<div id="sAudio"></div>
+		<div id="sAudio" class="sBlock">
+			<!--<audio autoplay loop><source src="audio/Youth Lagoon - Cannons.mp3" type="audio/mpeg"></audio>-->
+		</div>
+
+		<div id="s1" class="sBlock">.text</div>
+		<div id="s2" class="sBlock">.html</div>
+
+
 
 		<script>
 			var text;
@@ -67,15 +81,56 @@
 			}
 			document.getElementById("sWeekend").innerHTML = text;
 
+			var w, h;
+			w = Math.floor(Math.random() * window.innerWidth * 0.2);
+			h = Math.floor(Math.random() * window.innerHeight * 0.2);
+
+			/*$(document).ready(function(){
+			    animateDiv();
+			    
+			});*/
+
+			function makeNewPosition(){
+			    
+			    // Get viewport dimensions (remove the dimension of the div)
+			    var h = $(window).height() - 20;
+			    var w = $(window).width() - 100;
+			    
+			    var nh = Math.floor(Math.random() * h);
+			    var nw = Math.floor(Math.random() * w);
+			    
+			    return [nh,nw];    
+			    
+			}
+
+			function animateDiv1(){
+			    var newq = makeNewPosition();
+			    $("#s1").animate({ top: newq[0], left: newq[1] }, function(){
+			      animateDiv1();         
+			    });
+
+			    
+			};
+			function animateDiv2(){
+			    var newq = makeNewPosition();
+			    $("#s2").animate({ top: newq[0], left: newq[1] }, function(){
+			      animateDiv2();         
+			    });
+
+			    
+			};
+
+
 			function sTop() {
 				document.getElementById("sWeekend").style.display = "block";
 				document.getElementById("sZip").style.display = "none";
-				document.body.style.backgroundColor = "yellow";
-				document.getElementById("sAudio").innerHTML='<audio autoplay loop><source src="audio/Youth Lagoon - Cannons.mp3" type="audio/mpeg"></audio>';
-				
-			}	
-	
-		</script>
+				document.body.style.backgroundColor = "yellow";	
+				$(".sBlock").show();				
+				animateDiv1();
+				animateDiv2();
 
+			}
+
+		</script>
 	</body>
 </html>

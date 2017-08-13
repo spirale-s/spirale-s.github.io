@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title><!--...--></title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<style>
+			@font-face {
+				font-family: andaleMono;
+				src: url(../font/andaleMono.woff) format('woff'),
+					 url(../font/andaleMono.ttf) format('truetype');
+			}
+			@font-face {
+				font-family: kenpixel;
+				src: url(../font/kenpixel.ttf) format('truetype'),
+					 url(../font/kenpixel.woff) format('woff');		 
+			}		
+			
+			body {
+				font-family: monospace;
+				background-color: #f0f0f0;
+			}
+			span {
+				cursor:pointer;
+			}
+			span:hover{
+				opacity:0.5;
+			}
+
+			.sCenter {
+				position: absolute;
+				width: 100%;
+				top: 66%;
+				margin: 0px;
+				text-align: center;
+				font-size: 11px;	
+			}
+
+			#sWeekend {
+				font-family: "andaleMono";
+				display: none;
+			}
+			#sZip {
+				font-family: "andaleMono";
+			}
+
+		</style>
+	</head>
+
+	<body>
+		<p class="sCenter">
+			<span id="sWeekend" onclick="window.location.reload()"></span>&nbsp;<span id="sZip" onclick="sTop()">.zip</span>
+		</p>
+		<div id="sAudio"></div>
+
+		<script>
+			var text;
+			switch (new Date().getDay()) {
+				case 6:
+					text = "Today is Saturday";
+				break;
+				case 0:
+					text = "Today is Sunday";
+				break;
+				default:
+					text = "Looking forward to the Weekend";
+			}
+			document.getElementById("sWeekend").innerHTML = text;
+
+			function sTop() {
+				document.getElementById("sWeekend").style.display = "block";
+				document.getElementById("sZip").style.display = "none";
+				document.body.style.backgroundColor = "yellow";
+				document.getElementById("sAudio").innerHTML='<audio autoplay loop><source src="audio/Youth Lagoon - Cannons.mp3" type="audio/mpeg"></audio>';
+				
+			}	
+	
+		</script>
+
+	</body>
+</html>
