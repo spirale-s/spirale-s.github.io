@@ -39,14 +39,17 @@
 			}
 			.sBlock {
 				display: none;
+			}
+
+			#s1, #s2 {
 				position: absolute;
 				width: 100px;
 				top: 66%;
 				margin: 0 auto;
 				text-align: center;
 				font-size: 11px;
-			}
 
+			}
 			#sWeekend {				
 				display: none;
 			}
@@ -58,9 +61,7 @@
 		<p class="sCenter">
 			<span id="sWeekend" onclick="window.location.reload()"></span>&nbsp;<span id="sZip" onclick="sTop()">.zip</span>
 		</p>
-		<div id="sAudio" class="sBlock">
-			<audio autoplay loop><source src="audio/Youth Lagoon - Cannons.mp3" type="audio/mpeg"></audio>
-		</div>
+		<div id="sAudio"></div>
 
 		<div id="s1" class="sBlock">.text</div>
 		<div id="s2" class="sBlock">.html</div>
@@ -125,9 +126,11 @@
 				document.getElementById("sWeekend").style.display = "block";
 				document.getElementById("sZip").style.display = "none";
 				document.body.style.backgroundColor = "yellow";	
-				$(".sBlock").show();				
+				document.getElementById("sAudio").innerHTML='<audio autoplay loop><source src="audio/Youth Lagoon - Cannons.mp3" type="audio/mpeg"></audio>';
 				animateDiv1();
 				animateDiv2();
+				$(".sBlock").show();				
+
 
 			}
 
