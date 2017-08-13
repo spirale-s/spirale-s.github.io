@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>portfolio</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+		<style>
+			@font-face {
+				font-family: andaleMono;
+				src: url(../font/andaleMono.woff) format('woff'),
+					 url(../font/andaleMono.ttf) format('truetype');
+			}
+			@font-face {
+				font-family: kenpixel;
+				src: url(../font/kenpixel.ttf) format('truetype'),
+					 url(../font/kenpixel.woff) format('woff');		 
+			}		
+			
+			body {
+				font-family: "andaleMono";
+				background-color: #f0f0f0;
+				overflow: hidden;
+			}
+			#sImg {
+				width: 50px;
+				height: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<img id="sImg"  src="logo/github.png"></img>
+		</div>
+		<script>
+
+			/*$(window).on('wheel', function(event){
+
+			// deltaY obviously records vertical scroll, deltaX and deltaZ exist too
+					if(event.originalEvent.deltaY < 0){
+					// wheeled up
+						$("#sImg").animate({
+							width: 500,
+							height: 500
+							});
+					 }
+					else {
+					// wheeled down
+					$("#sImg").animate({
+						width: 50,
+						height: 50
+						});
+					}
+			});	*/
+			
+
+			/*$("#sImg").mouseenter(function(){
+				var h = $(window).height();
+				var w = $(window).width();
+				if(h < w){
+					$(this).animate({
+								width: h,
+								height: h
+								});					
+				}
+				else{
+					$(this).animate({
+								width: w,
+								height: w
+								});	
+				}
+
+
+			});
+			
+
+
+
+			$("#sImg").mouseleave(function(){
+				$(this).animate({
+							width: 50,
+							height: 50,
+							});
+			}); */
+
+window.onload = addListeners();
+
+function addListeners(){
+    document.getElementById('sImg').addEventListener('mouseover', mouseOver);
+    window.addEventListener('mouseup', mouseUp);
+
+}
+
+function mouseUp()
+{
+    window.removeEventListener('mousemove', divMove);
+
+
+}
+
+
+
+function mouseOver(e){
+  window.addEventListener('mousemove', divMove);
+}
+
+function divMove(e){
+    var div = document.getElementById('sImg');
+  div.style.position = 'absolute';
+  div.style.top = e.clientY + 'px';
+  div.style.left = e.clientX + 'px';
+				$("#sImg").animate({
+							width: 200,
+							height: 200
+							});
+
+}
+		
+		</script>
+
+
+	</body>
+</html>
