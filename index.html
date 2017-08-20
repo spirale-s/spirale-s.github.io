@@ -21,13 +21,9 @@
 				font-family: "andaleMono";
 				background-color: #f0f0f0;
 				overflow: hidden;
+				
 			}
-			span {
-				cursor:pointer;
-			}
-			span:hover{
-				opacity:0.5;
-			}
+
 
 			.sCenter {
 				position: absolute;
@@ -35,7 +31,7 @@
 				top: 66%;
 				margin: 0px;
 				text-align: center;
-				font-size: 11px;	
+				font-size: 11px;
 			}
 			.sBlock {
 				display: none;
@@ -46,14 +42,13 @@
 				left: 50%;
 				margin: 0px;
 				font-size: 11px;
+				
 			}
-
-
-			#sWeekend {				
-				display: none;
-			}
-			#space {
-				font-size: 18px;
+			.sLink:hover {
+				cursor:pointer;
+			}			
+			.sLink:hover {
+				opacity:0.5;
 			}
 
 		</style>
@@ -61,7 +56,8 @@
 
 	<body>
 		<p class="sCenter">
-			<span id="sWeekend" onclick="window.location.reload()">2017: A<span id="space">&nbsp;Space&nbsp;</span>Odyssey</span>&nbsp;<span id="sZip" onclick="sTop()">.zip</span>
+			<span >2017: A</span><span id="space" class="sLink" onclick="sTop()" style="font-size:22px;">&nbsp;Space&nbsp;</span><span>Odyssey</span>
+			
 		</p>
 		<div id="sAudio"></div>
 
@@ -128,9 +124,6 @@
 			};
 
 			function sTop() {
-				document.getElementById("sWeekend").style.display = "block";
-				document.getElementById("sZip").style.display = "none";
-				document.body.style.backgroundColor = "yellow";	
 				document.getElementById("sAudio").innerHTML='<audio autoplay loop><source src="audio/Garden Highway-The Echelon Effect.mp3" type="audio/mpeg"></audio>';
 				$(".sBlock").show();	
 				animateDiv1();
