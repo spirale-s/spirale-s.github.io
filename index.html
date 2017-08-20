@@ -52,26 +52,29 @@
 			#sWeekend {				
 				display: none;
 			}
+			#space {
+				font-size: 18px;
+			}
 
 		</style>
 	</head>
 
 	<body>
 		<p class="sCenter">
-			<span id="sWeekend" onclick="window.location.reload()"></span>&nbsp;<span id="sZip" onclick="sTop()">.zip</span>
+			<span id="sWeekend" onclick="window.location.reload()">2017: A<span id="space">&nbsp;Space&nbsp;</span>Odyssey</span>&nbsp;<span id="sZip" onclick="sTop()">.zip</span>
 		</p>
 		<div id="sAudio"></div>
 
-		<div id="s1" class="sBlock">.txt</div>
-		<div id="s2" class="sBlock">.html</div>
-		<div id="s3" class="sBlock">.jpeg</div>
-		<div id="s4" class="sBlock">.pdf</div>
-		<div id="s5" class="sBlock">.avi</div>
+		<div id="s1" class="sBlock">.text</div>
+		<div id="s2" class="sBlock">.math</div>
+		<div id="s3" class="sBlock">.image</div>
+		<div id="s4" class="sBlock">.architecture</div>
+		<div id="s5" class="sBlock">.philosophy</div>
 
 
 
 		<script>
-			var text;
+			/*var text;
 			switch (new Date().getDay()) {
 				case 6:
 					text = "Today is Saturday";
