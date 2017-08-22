@@ -51,12 +51,18 @@
 				opacity:0.5;
 			}
 
+			.sWin {
+				display: none;
+			}
+
 		</style>
 	</head>
 
 	<body>
-
-		<embed src="http://www.huizhongsun.com" width="600" height="400"></embed>
+		<embed id="sWindow1" class="sWin" src="tensor.html" width="600" height="400"></embed>
+		<embed id="sWindow2" class="sWin" src="tensor-image.html" width="600" height="400"></embed>
+		<embed id="sWindow3" class="sWin" src="text.html" width="600" height="400"></embed>
+		<embed id="sWindow4" class="sWin" src="text-image.html" width="600" height="400"></embed>
 
 		<p class="sCenter">
 			<span >2017: A</span><span id="space" class="sLink" onclick="sTop()" style="font-size:22px">&nbsp;Space&nbsp;</span><span>Odyssey</span>
@@ -65,8 +71,8 @@
 		</p>
 		<!--<div id="sAudio"><audio autoplay loop><source src="audio/Garden Highway-The Echelon Effect.mp3" type="audio/mpeg"></audio></div>-->
 
-		<div id="s1" class="sBlock">.text</div>
-		<div id="s2" class="sBlock">.math</div>
+		<div id="s1" class="sBlock">.data</div>
+		<div id="s2" class="sBlock">.text</div>
 		<div id="s3" class="sBlock">.image</div>
 		<div id="s4" class="sBlock">.architecture</div>
 		<div id="s5" class="sBlock">.philosophy</div>
@@ -94,11 +100,19 @@
 			    animateDiv();
 			    
 			});*/
+			
+			$("#s1").bind("click", function(){
+				$("#sWindow1").show();
+				$("#sWindow2").show();
 
+			});
 
-			$("#s1").click(function(){
+			$("#s1").bind("mouseover", function(){
 				sPosition = $(this).position();
-				var range =10 - Math.floor(Math.random() * 20);
+				var range = 0;
+				while(range > -10 && range < 10){
+					range =20 - Math.floor(Math.random() * 40);
+				}
 
 				$("#s2").animate({top: sPosition.top+range, left: sPosition.left+range},5000);
 
@@ -107,7 +121,13 @@
 									shake("#s2",10);
 								}, 50);
 						
-				$("#s3").click(function(){clearInterval(sInterval);});
+				$("#s3").click(function(){
+					clearInterval(sInterval);
+					$("#sWindow1").hide();
+					$("#sWindow2").hide();
+					$("#sWindow3").show();
+					$("#sWindow4").show();					
+				});
 
 			}); 
 
