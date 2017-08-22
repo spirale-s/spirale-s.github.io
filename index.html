@@ -44,40 +44,28 @@
 				font-size: 11px;
 				
 			}
-			.sLink {
+			.sLink:hover {
 				cursor:pointer;
 			}			
 			.sLink:hover {
 				opacity:0.5;
 			}
 
-			.sWin {
-				display: none;
-			}
-
 		</style>
 	</head>
 
 	<body>
-		<embed id="sWindow1" class="sWin" src="tensor.html" width="600" height="400"></embed>
-		<embed id="sWindow2" class="sWin" src="tensor-image.html" width="600" height="400"></embed>
-		<embed id="sWindow3" class="sWin" src="text.html" width="600" height="400"></embed>
-		<embed id="sWindow4" class="sWin" src="text-image.html" width="600" height="400"></embed>
-
 		<p class="sCenter">
-			<span >2017: A</span><span id="space" class="sLink" onclick="sTop()" style="font-size:22px">&nbsp;Space&nbsp;</span><span>Odyssey</span>
-
-
+			<span >2017: A</span><span id="space" class="sLink" onclick="sTop()" style="font-size:22px;">&nbsp;Space&nbsp;</span><span>Odyssey</span>
+			
 		</p>
-		<!--<div id="sAudio"><audio autoplay loop><source src="audio/Garden Highway-The Echelon Effect.mp3" type="audio/mpeg"></audio></div>-->
+		<div id="sAudio"><audio autoplay loop><source src="audio/Garden Highway-The Echelon Effect.mp3" type="audio/mpeg"></audio></div>
 
-		<div id="s1" class="sBlock">.data</div>
-		<div id="s2" class="sBlock">.text</div>
+		<div id="s1" class="sBlock">.text</div>
+		<div id="s2" class="sBlock">.math</div>
 		<div id="s3" class="sBlock">.image</div>
 		<div id="s4" class="sBlock">.architecture</div>
 		<div id="s5" class="sBlock">.philosophy</div>
-
-		
 
 
 
@@ -100,80 +88,6 @@
 			    animateDiv();
 			    
 			});*/
-			
-			$("#s1").bind("click", function(){
-				$("#sWindow1").show();
-				$("#sWindow2").show();
-
-			});
-
-			$("#s1").bind("mouseover", function(){
-				sPosition = $(this).position();
-				var range = 0;
-				while(range > -10 && range < 10){
-					range =20 - Math.floor(Math.random() * 40);
-				}
-
-				$("#s2").animate({top: sPosition.top+range, left: sPosition.left+range},5000);
-
-				var sInterval = setInterval(function(){
-									shake("#s1", 10);
-									shake("#s2",10);
-								}, 50);
-						
-				$("#s3").click(function(){
-					clearInterval(sInterval);
-					$("#sWindow1").hide();
-					$("#sWindow2").hide();
-					$("#sWindow3").show();
-					$("#sWindow4").show();					
-				});
-
-			}); 
-
-
-
-
-function sDistance(element1,element2){
-	var div1rect = $(element1).getBoundingClientRect();
-	var div2rect = $(element2).getBoundingClientRect();
-
-	// get div1's center point
-	var div1x = div1rect.left + div1rect.width/2;
-	var div1y = div1rect.top + div1rect.height/2;
-
-	// get div2's center point
-	var div2x = div2rect.left + div2rect.width/2;
-	var div2y = div2rect.top + div2rect.height/2;
-
-	// calculate the distance using the Pythagorean Theorem (a^2 + b^2 = c^2)
-	var distanceSquared = Math.pow(div1x - div2x, 2) + Math.pow(div1y - div2y, 2);
-	var distance = Math.sqrt(distanceSquared);
-	return distance;		
-}
-		
-
-
-			function shake(element, coefficient){
-
-			    $(element).css({"transition": "0.1s"});			
-		    
-	    		var randomInt1 = Math.floor((Math.random() * 3) + 1);
-		        var randomInt2 = Math.floor((Math.random() * 3) + 1);
-		        var randomInt3 = Math.floor((Math.random() * 2) + 1);
-		        
-		        var phase1 = (randomInt1 % 2) == 0 ? "+" : "-";
-		        var phase2 = (randomInt2 % 2) == 0 ? "+" : "-";
-		        var phase3 = (randomInt3 % 2) == 0 ? "+" : "-";
-		        
-		        var transitionX = ((phase1 + randomInt1) * (coefficient / 10)) + "px";
-		        var transitionY = ((phase2 + randomInt2) * (coefficient / 10)) + "px";
-		        var rotate = ((phase3 + randomInt3) * (coefficient / 10)) + "deg";
-		               
-		        $(element).css({"-webkit-transform": "translate("+transitionX+","+transitionY+") rotate("+rotate+")"});  
-			    
-			}
-
 
 			function makeNewPosition(){
 			    
@@ -210,49 +124,16 @@ function sDistance(element1,element2){
 			};
 
 			function sTop() {
-				if($(".sBlock").css("display")=="none"){
-					$(".sBlock").show();	
-					animateDiv1();
-					animateDiv2();
-					animateDiv3();	
-					animateDiv4();	
-					animateDiv5();						
-				}
+				$(".sBlock").show();	
+				animateDiv1();
+				animateDiv2();
+				animateDiv3();	
+				animateDiv4();	
+				animateDiv5();	
+
 
 			}
 
-
-/*
-
-			$('div').bind('mouseenter', function() {
-
-				this.iid = setInterval(function() {
-				    $("div").css({"transition": "0.1s"});
-				    var coefficient=10;
-
-					var randomInt1 = Math.floor((Math.random() * 3) + 1);
-				    var randomInt2 = Math.floor((Math.random() * 3) + 1);
-				    var randomInt3 = Math.floor((Math.random() * 2) + 1);
-				    
-				    var phase1 = (randomInt1 % 2) == 0 ? "+" : "-";
-				    var phase2 = (randomInt2 % 2) == 0 ? "+" : "-";
-				    var phase3 = (randomInt3 % 2) == 0 ? "+" : "-";
-				    
-				    var transitionX = ((phase1 + randomInt1) * (coefficient / 10)) + "px";
-				    var transitionY = ((phase2 + randomInt2) * (coefficient / 10)) + "px";
-				    var rotate = ((phase3 + randomInt3) * (coefficient / 10)) + "deg";
-				           
-				    $("div").css({"-webkit-transform": "translate("+transitionX+","+transitionY+") rotate("+rotate+")"}); 
-				}, 50);
-			}).bind('mouseleave', function(){
-				this.iid && clearInterval(this.iid);
-			});
-
-*/
-
-
-
-			/*
 			$("#s1").mouseenter(function(){
 				animateDiv1();
 			});
@@ -267,7 +148,7 @@ function sDistance(element1,element2){
 			});
 			$("#s5").mouseenter(function(){
 				animateDiv5();
-			});	*/
+			});	
 
 		</script>
 	</body>
