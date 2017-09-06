@@ -21,9 +21,13 @@
 				font-family: "andaleMono";
 				background-color: #f0f0f0;
 				overflow: hidden;
-				
 			}
-
+			span {
+				cursor:pointer;
+			}
+			span:hover{
+				opacity:0.5;
+			}
 
 			.sCenter {
 				position: absolute;
@@ -31,24 +35,23 @@
 				top: 66%;
 				margin: 0px;
 				text-align: center;
-				font-size: 11px;
+				font-size: 11px;	
 			}
 			.sBlock {
 				display: none;
+			}
+
+			#s1, #s2 {
 				position: absolute;
 				width: 100px;
-				height: 20px;
 				top: 66%;
-				left: 50%;
-				margin: 0px;
+				margin: 0 auto;
+				text-align: center;
 				font-size: 11px;
-				
+
 			}
-			.sLink:hover {
-				cursor:pointer;
-			}			
-			.sLink:hover {
-				opacity:0.5;
+			#sWeekend {				
+				display: none;
 			}
 
 		</style>
@@ -56,21 +59,17 @@
 
 	<body>
 		<p class="sCenter">
-			<span >2017: A</span><span id="space" class="sLink" onclick="sTop()" style="font-size:22px;">&nbsp;Space&nbsp;</span><span>Odyssey</span>
-			
+			<span id="sWeekend" onclick="window.location.reload()"></span>&nbsp;<span id="sZip" onclick="sTop()">.zip</span>
 		</p>
-		<div id="sAudio"><audio autoplay loop><source src="audio/Garden Highway-The Echelon Effect.mp3" type="audio/mpeg"></audio></div>
+		<div id="sAudio"></div>
 
 		<div id="s1" class="sBlock">.text</div>
-		<div id="s2" class="sBlock">.math</div>
-		<div id="s3" class="sBlock"><a href="Drawings.pdf">.image</a></div>
-		<div id="s4" class="sBlock">.architecture</div>
-		<div id="s5" class="sBlock">.philosophy</div>
+		<div id="s2" class="sBlock">.html</div>
 
 
 
 		<script>
-			/*var text;
+			var text;
 			switch (new Date().getDay()) {
 				case 6:
 					text = "Today is Saturday";
@@ -83,6 +82,9 @@
 			}
 			document.getElementById("sWeekend").innerHTML = text;
 
+			var w, h;
+			w = Math.floor(Math.random() * window.innerWidth * 0.2);
+			h = Math.floor(Math.random() * window.innerHeight * 0.2);
 
 			/*$(document).ready(function(){
 			    animateDiv();
@@ -104,52 +106,34 @@
 
 			function animateDiv1(){
 			    var newq = makeNewPosition();
-			    $("#s1").animate({top: newq[0], left: newq[1]});		    
+			    $("#s1").animate({ top: newq[0], left: newq[1] }, function(){
+			      animateDiv1();         
+			    });
+
+			    
 			};
 			function animateDiv2(){
 			    var newq = makeNewPosition();
-			    $("#s2").animate({top: newq[0], left: newq[1]});		    
-			};
-			function animateDiv3(){
-			    var newq = makeNewPosition();
-			    $("#s3").animate({top: newq[0], left: newq[1]});		    
-			};
-			function animateDiv4(){
-			    var newq = makeNewPosition();
-			    $("#s4").animate({top: newq[0], left: newq[1]});		    
-			};			
-			function animateDiv5(){
-			    var newq = makeNewPosition();
-			    $("#s5").animate({top: newq[0], left: newq[1]});		    
+			    $("#s2").animate({ top: newq[0], left: newq[1] }, function(){
+			      animateDiv2();         
+			    });
+
+			    
 			};
 
+
 			function sTop() {
-				$(".sBlock").show();	
+				document.getElementById("sWeekend").style.display = "block";
+				document.getElementById("sZip").style.display = "none";
+				document.body.style.backgroundColor = "yellow";	
+				document.getElementById("sAudio").innerHTML='<audio autoplay loop><source src="audio/Youth Lagoon - Cannons.mp3" type="audio/mpeg"></audio>';
 				animateDiv1();
 				animateDiv2();
-				animateDiv3();	
-				animateDiv4();	
-				animateDiv5();	
+				$(".sBlock").show();				
 
 
 			}
 
-/*			$("#s1").mouseenter(function(){
-				animateDiv1();
-			});
-			$("#s2").mouseenter(function(){
-				animateDiv2();
-			});
-			$("#s3").mouseenter(function(){
-				animateDiv3();
-			});
-			$("#s4").mouseenter(function(){
-				animateDiv4();
-			});
-			$("#s5").mouseenter(function(){
-				animateDiv5();
-			});	
-*/
 		</script>
 	</body>
 </html>
