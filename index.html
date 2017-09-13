@@ -29,6 +29,12 @@
 				opacity:0.5;
 			}
 
+			a:link {color: #000000; text-decoration:none;}
+			a:visited {color: #000000; text-decoration:none;}
+			a:hover{
+				opacity: 0.6;
+			}
+
 			.sCenter {
 				position: absolute;
 				width: 100%;
@@ -59,80 +65,39 @@
 
 	<body>
 		<p class="sCenter">
-			<span id="sWeekend" onclick="window.location.reload()"></span>&nbsp;<span id="sZip" onclick="sTop()">.zip</span>
+			<span id="sZip">.zip</span>
 		</p>
-		<div id="sAudio"></div>
 
-		<div id="s1" class="sBlock">.text</div>
-		<div id="s2" class="sBlock">.html</div>
+		<div id="s1" class="sBlock"><a href="http://huizhongsun.github.io">.space</a></div>
+		<div id="s2" class="sBlock">...</div>
 
 
 
 		<script>
-			var text;
-			switch (new Date().getDay()) {
-				case 6:
-					text = "Today is Saturday";
-				break;
-				case 0:
-					text = "Today is Sunday";
-				break;
-				default:
-					text = "Looking forward to the Weekend";
-			}
-			document.getElementById("sWeekend").innerHTML = text;
 
-			var w, h;
-			w = Math.floor(Math.random() * window.innerWidth * 0.2);
-			h = Math.floor(Math.random() * window.innerHeight * 0.2);
+			$("#sZip").click(function(){
 
-			/*$(document).ready(function(){
-			    animateDiv();
-			    
-			});*/
+//				if($(".sBlock").css("display")=="none"){
 
-			function makeNewPosition(){
-			    
-			    // Get viewport dimensions (remove the dimension of the div)
-			    var h = $(window).height() - 20;
-			    var w = $(window).width() - 100;
-			    
-			    var nh = Math.floor(Math.random() * h);
-			    var nw = Math.floor(Math.random() * w);
-			    
-			    return [nh,nw];    
-			    
-			}
-
-			function animateDiv1(){
-			    var newq = makeNewPosition();
-			    $("#s1").animate({ top: newq[0], left: newq[1] }, function(){
-			      animateDiv1();         
-			    });
-
-			    
-			};
-			function animateDiv2(){
-			    var newq = makeNewPosition();
-			    $("#s2").animate({ top: newq[0], left: newq[1] }, function(){
-			      animateDiv2();         
-			    });
-
-			    
-			};
+					$(".sBlock").show();	
+//	booming		
+					var len = 2;
+					for(i=0; i<len; i++){
+						var newq = makeNewPosition();
+						$(".sBlock").eq(i).animate({top: newq[0], left: newq[1]},1000);	
+					}
+//				}
 
 
-			function sTop() {
-				document.getElementById("sWeekend").style.display = "block";
-				document.getElementById("sZip").style.display = "none";
-				document.body.style.backgroundColor = "yellow";	
-				document.getElementById("sAudio").innerHTML='<audio autoplay loop><source src="audio/Youth Lagoon - Cannons.mp3" type="audio/mpeg"></audio>';
-				animateDiv1();
-				animateDiv2();
-				$(".sBlock").show();				
+			});
 
-
-			}
+function makeNewPosition(){			    
+    var h = Math.floor(Math.random() * 100);
+    var w = Math.floor(Math.random() * 100);
+    var nh = String(h)+"%";
+    var nw = String(w)+"%";			    
+    return [nh,nw];    			    
+}	
 
 		</script>
 	</body>
