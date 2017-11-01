@@ -26,13 +26,15 @@
 				cursor:pointer;
 			}
 			span:hover{
-				opacity:0.5;
+				color: white;
+				background: red;
 			}
 
 			a:link {color: #000000; text-decoration:none;}
-			a:visited {color: #000000; text-decoration:none;}
+			a:visited {color: #000000; text-decoration:underline; }
 			a:hover{
-				opacity: 0.6;
+				color: white;
+				background: red;
 			}
 
 			.sCenter {
@@ -45,19 +47,21 @@
 			}
 			.sBlock {
 				display: none;
-			}
-
-			#s1, #s2 {
 				position: absolute;
 				width: 100px;
+				height: 20px;
 				top: 66%;
-				margin: 0 auto;
-				text-align: center;
+				left: 50%;
+				margin: 0px;
 				font-size: 11px;
-
 			}
+
+
 			#sWeekend {				
 				display: none;
+			}
+			#sZip {
+				font-size: 22px;
 			}
 
 		</style>
@@ -68,9 +72,14 @@
 			<span id="sZip">.zip</span>
 		</p>
 
-		<div id="s1" class="sBlock"><a href="http://huizhongsun.github.io">.space</a></div>
-		<div id="s2" class="sBlock">...</div>
-
+		<div id="s1" class="sBlock"><a href="http://huizhongsun.github.io">.net</a></div>
+		<div id="s1" class="sBlock"><a href="proposal.pdf">.proposal</a></div>
+		<div id="s1" class="sBlock"><a href="art.pdf">.art</a></div>
+		<div id="s1" class="sBlock"><a href="research.pdf">.research</a></div>
+		<div id="s1" class="sBlock"><a href="detail.pdf">.detail</a></div>
+		<div id="s1" class="sBlock"><a href="vision.pdf">.vision</a></div>
+		<div id="s1" class="sBlock"><a href="http://www.archiposition.com/information/projects/item/1014-wuhan-wood-exhibition-hall.html">.built</a></div>
+		<div id="s2" class="sBlock"><a href="portfolio.pdf">...</a></div>
 
 
 		<script>
@@ -81,7 +90,7 @@
 
 					$(".sBlock").show();	
 //	booming		
-					var len = 2;
+					var len = 8;
 					for(i=0; i<len; i++){
 						var newq = makeNewPosition();
 						$(".sBlock").eq(i).animate({top: newq[0], left: newq[1]},1000);	
