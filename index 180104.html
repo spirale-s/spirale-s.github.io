@@ -43,7 +43,7 @@
 				top: 66%;
 				margin: 0px;
 				text-align: center;
-				font-size: 15px;	
+				font-size: 11px;	
 			}
 			.sBlock {
 				display: none;
@@ -68,9 +68,48 @@
 	</head>
 
 	<body>
+		<p class="sCenter">
+			<span id="sZip">.safari</span>
+		</p>
 
-		<div class="sCenter"><a href="Portfolio.pdf">Huizhong Sun <br><br> huizhong2sun@gmail.com <br><br> +1 401-489-6016</a></div>
-		
+		<div class="sBlock"><a href="http://huizhongsun.github.io">.net</a></div>
+		<div class="sBlock"><a href="proposal.pdf">.proposal</a></div>
+		<div class="sBlock"><a href="art.pdf">.art</a></div>
+		<div class="sBlock"><a href="research.pdf">.research</a></div>
+		<div class="sBlock"><a href="detail.pdf">.detail</a></div>
+		<div class="sBlock"><a href="vision.pdf">.vision</a></div>
+		<div class="sBlock"><a href="http://www.archiposition.com/information/projects/item/1014-wuhan-wood-exhibition-hall.html">.built</a></div>
+		<div class="sBlock"><a href="Portfolio.pdf">...</a></div>
+		<div class="sBlock"><a href="Katsuhiro Otomo’s Domu – SOCKS.pdf">[[[[[[[[[[[</a></div>
 
+
+		<script>
+
+			$("#sZip").click(function(){
+
+//				if($(".sBlock").css("display")=="none"){
+
+					$(".sBlock").show();	
+//	booming		
+					var len = 9;
+					for(i=0; i<len; i++){
+						var newq = makeNewPosition();
+						$(".sBlock").eq(i).animate({top: newq[0], left: newq[1]},1000);	
+					}
+//				}
+
+
+			});
+
+
+function makeNewPosition(){			    
+    var h = Math.floor(Math.random() * 100);
+    var w = Math.floor(Math.random() * 100);
+    var nh = String(h)+"%";
+    var nw = String(w)+"%";			    
+    return [nh,nw];    			    
+}	
+
+		</script>
 	</body>
 </html>
